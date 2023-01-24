@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+#Project description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a hangman game build with React. 
 
-## Available Scripts
+#Game rules
 
-In the project directory, you can run:
+Hangman is a game where a user has to make a series of guesses to accurately identify a word, chosen at random. The word is not known initially, and the user will be presented with a screen that contains a number of blank slots, each representing a space for a letter. 
 
-### `npm start`
+As the user enters a particular letter via the keyboard, the blank slot will be replaced by the respective letter, or the user will be informed that the guess was incorrect. The word is successively revealed as the blank slots fill with letters based on the users guesses.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To win the game, the user has to accurately fill the all of the blank slots with letters to complete the letter, before reaching a total of 6 failed guesses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#Using / testing the code
 
-### `npm test`
+To use the app, you will first need to install dependencies using 'npm install' whilst in the app directory. Then use 'npm start' to start the application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#Components & Props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Figure is responsible for rendering the hangman graphic onto the screen, dynamically. wrongLetters is passed as a prop.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Wrongletters is responsible for assessing whether there are any wrong letters, and displaying a paragraph component if there are. It will map through each wrong letter and create a span, with comma separation where applicable. wrongLetters is passed as a prop
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+wrongLetters prop is managed in App.js. A useEffect hook is used to assess user entry, and append the wrong letter into a new array and update state accordingly
 
-### `npm run eject`
+Instructions is responsible for displaying hangman instructions, based on an action (clicking the 'i' or cross). This will toggle visibility of the instructions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Notification will display a notification pop up, letting the user know that their entry is invalid. This is based on showNotification which is passed as a prop.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+showNotification prop value is determined by if-else statements, that capture the logic of whether the user has made a valid entry
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Word is responsible for taking the selectedWord as a prop, and splitting it into an array, which is then mapped through to create spaces for the letters
