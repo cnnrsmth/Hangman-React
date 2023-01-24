@@ -1,8 +1,8 @@
-#Project description
+# Project description
 
 This project is a hangman game build with React. 
 
-#Game rules
+## Game rules
 
 Hangman is a game where a user has to make a series of guesses to accurately identify a word, chosen at random. The word is not known initially, and the user will be presented with a screen that contains a number of blank slots, each representing a space for a letter. 
 
@@ -10,12 +10,12 @@ As the user enters a particular letter via the keyboard, the blank slot will be 
 
 To win the game, the user has to accurately fill the all of the blank slots with letters to complete the letter, before reaching a total of 6 failed guesses.
 
-#Using / testing the code
+## Using / testing the code
 
 To use the app, you will first need to install dependencies using 'npm install' whilst in the app directory. Then use 'npm start' to start the application
 
 
-#Components & Props
+## Components & Props
 
 Figure is responsible for rendering the hangman graphic onto the screen, dynamically. wrongLetters is passed as a prop.
 
