@@ -1,32 +1,35 @@
-# Project description
+# Hangman Game build with React
 
-This project is a hangman game build with React. 
+Try it here: https://hangman-711f4.web.app/
 
-## Game rules
+## Desktop view
 
-Hangman is a game where a user has to make a series of guesses to accurately identify a word, chosen at random. The word is not known initially, and the user will be presented with a screen that contains a number of blank slots, each representing a space for a letter. 
+![Image showing gameplay]('./images/flow1.jpg)
 
-As the user enters a particular letter via the keyboard, the blank slot will be replaced by the respective letter, or the user will be informed that the guess was incorrect. The word is successively revealed as the blank slots fill with letters based on the users guesses.
+![Image showing gameplay]('./images/flow2.jpg)
 
-To win the game, the user has to accurately fill the all of the blank slots with letters to complete the letter, before reaching a total of 6 failed guesses.
+![Image showing gameplay]('./images/flow3.jpg)
 
-## Using / testing the code
+In this version of the classic word-guessing game, the word is randomly generated and loaded for you to guess. You'll see the word displayed as a series of dashes, with each dash representing a letter in the word. You'll need to guess letters one at a time to reveal the word before you run out of guesses.
 
-To use the app, you will first need to install dependencies using 'npm install' whilst in the app directory. Then use 'npm start' to start the application
+## Quick start
 
+Clone the repo.
 
-## Components & Props
+~~~
+// Install dependencies
+npm install
 
-Figure is responsible for rendering the hangman graphic onto the screen, dynamically. wrongLetters is passed as a prop.
+// Run app locally
+npm start
+~~~
 
-Wrongletters is responsible for assessing whether there are any wrong letters, and displaying a paragraph component if there are. It will map through each wrong letter and create a span, with comma separation where applicable. wrongLetters is passed as a prop
+## Technology
 
-wrongLetters prop is managed in App.js. A useEffect hook is used to assess user entry, and append the wrong letter into a new array and update state accordingly
+This is a front-end application, built using:
 
-Instructions is responsible for displaying hangman instructions, based on an action (clicking the 'i' or cross). This will toggle visibility of the instructions
-
-Notification will display a notification pop up, letting the user know that their entry is invalid. This is based on showNotification which is passed as a prop.
-
-showNotification prop value is determined by if-else statements, that capture the logic of whether the user has made a valid entry
-
-Word is responsible for taking the selectedWord as a prop, and splitting it into an array, which is then mapped through to create spaces for the letters
+*React
+*Javascript
+*JSX
+*CSS
+*HTML
